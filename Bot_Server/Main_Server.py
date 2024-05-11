@@ -90,6 +90,10 @@ class Main_Server:
                     # 添加好友后回复
                     elif msg.sender and not msg.roomid and ('添加了' in msg.content or '以上是打招呼的内容' in msg.content):
                         Thread(target=self.Accept_Friend_Msg, name="加好友后自动回复", args=(msg,)).start()
+                        # todo 自动邀请入群
+                        # 固定群聊id，临时用没问题
+                        rooms_id = ['39154998791@chatroom']
+                        Thread(target=self.Fms.Join_Room, name="加好友进群", args=(rooms_id, msg,)).start()
                     elif '收到红包，请在手机上查看' in msg.content and not msg.roomid:
                         Thread(target=self.Fms.Msg_Dispose, name="好友消息处理", args=(msg,)).start()
                 # 好友申请消息处理
