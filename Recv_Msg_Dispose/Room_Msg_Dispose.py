@@ -374,7 +374,7 @@ class Room_Msg_Dispose:
                     question=self.handle_atMsg(msg, at_user_lists=at_user_lists))
                 self.wcf.send_text(msg=use_msg, receiver=msg.roomid, aters=msg.sender)
             else:
-                send_msg = f'@{wx_name} 积分不足, 请求管理员或其它群友给你施舍点'
+                send_msg = f'@{wx_name} 怪怪忙碌中，请直接加微信会自动通过！'
                 self.wcf.send_text(msg=send_msg, receiver=msg.roomid, aters=msg.sender)
 
     # Md5查询
@@ -401,7 +401,7 @@ class Room_Msg_Dispose:
                 use_msg = self.Ams.get_md5(content=msg.content.strip())
                 self.wcf.send_text(msg=use_msg, receiver=msg.roomid, aters=msg.sender)
             else:
-                send_msg = f'@{wx_name} 积分不足, 请求管理员或其它群友给你施舍点'
+                send_msg = f'@{wx_name} 怪怪忙碌中，请直接加微信会自动通过！'
                 self.wcf.send_text(msg=send_msg, receiver=msg.roomid, aters=msg.sender)
 
     # IP查询
@@ -428,7 +428,7 @@ class Room_Msg_Dispose:
                 use_msg = self.Ams.get_threatbook_ip(content=msg.content.strip())
                 self.wcf.send_text(msg=use_msg, receiver=msg.roomid, aters=msg.sender)
             else:
-                send_msg = f'@{wx_name} 积分不足, 请求管理员或其它群友给你施舍点'
+                send_msg = f'@{wx_name} 怪怪忙碌中，请直接加微信会自动通过！'
                 self.wcf.send_text(msg=send_msg, receiver=msg.roomid, aters=msg.sender)
 
     # 端口查询
@@ -455,7 +455,7 @@ class Room_Msg_Dispose:
                 use_msg = self.Ams.get_portScan(content=msg.content.strip())
                 self.wcf.send_text(msg=use_msg, receiver=msg.roomid, aters=msg.sender)
             else:
-                send_msg = f'@{wx_name} 积分不足, 请求管理员或其它群友给你施舍点'
+                send_msg = f'@{wx_name} 怪怪忙碌中，请直接加微信会自动通过！'
                 self.wcf.send_text(msg=send_msg, receiver=msg.roomid, aters=msg.sender)
 
     # 赠送积分

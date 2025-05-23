@@ -84,6 +84,18 @@ class Main_Server:
                 # 群消息处理
                 if msg.type == 10000:
                     OutPut.outPut(f'10000: {msg.content}')
+                    # 自动同意好友申请
+                    # root_xml = ET.fromstring(msg.content.strip())
+                    # wx_id = root_xml.attrib["fromusername"]
+                    # OutPut.outPut(f'[*]: 接收到新的好友申请, 微信id为: {wx_id}')
+                    # v3 = root_xml.attrib["encryptusername"]
+                    # v4 = root_xml.attrib["ticket"]
+                    # scene = int(root_xml.attrib["scene"])
+                    # ret = self.wcf.accept_new_friend(v3=v3, v4=v4, scene=scene)
+                    # if ret:
+                    #     OutPut.outPut(f'[+]: 好友 {self.wcf.get_info_by_wxid(wx_id).get("name")} 已自动通过 !')
+                    # else:
+                    #     OutPut.outPut(f'[-]: 好友通过失败！！！')
                     if msg.roomid in push_rooms.keys() and msg.roomid:
                         # 进群欢迎
                         Thread(target=self.Join_Room, name="进群欢迎", args=(msg,)).start()
@@ -92,7 +104,8 @@ class Main_Server:
                         Thread(target=self.Accept_Friend_Msg, name="加好友后自动回复", args=(msg,)).start()
                         # todo 自动邀请入群
                         # 固定群聊id，临时用没问题
-                        rooms_id = ['39154998791@chatroom']
+                        rooms_id = ['39089489347@chatroom']# 音乐剧
+                        # rooms_id = ['57488677941@chatroom']# test
                         Thread(target=self.Fms.Join_Room, name="加好友进群", args=(rooms_id, msg,)).start()
                     elif '收到红包，请在手机上查看' in msg.content and not msg.roomid:
                         Thread(target=self.Fms.Msg_Dispose, name="好友消息处理", args=(msg,)).start()
@@ -127,7 +140,7 @@ class Main_Server:
                 continue
             except Exception as e:
                 # 打印异常
-                OutPut.outPut(f'[-]: 出现错误, 错误信息: {e}')
+                OutPut.outPut(f'[-]: main svr-143-出现错误, 错误信息: {e}')
 
     # 添加好友后自动回复
     def Accept_Friend_Msg(self, msg):

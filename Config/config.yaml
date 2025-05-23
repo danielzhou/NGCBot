@@ -31,7 +31,7 @@ Push_Config:
 ## 进群关键词配置
 Room_Key_Word:
   进测试群:
-    - '39154998791@chatroom'
+    - '39089489347@chatroom'
   音乐剧:
     - '39089489347@chatroom'
     - ''
@@ -253,7 +253,7 @@ Function_Key_Word:
     - '帮助菜单'
     - '菜单'
   # 进群欢迎词配置 换行用\n 支持微信表情
-  JoinRoom_Msg: '欢迎新进群的小可爱\n群主正在床上等你哦[爱心]~~~ ~~~'
+  JoinRoom_Msg: '欢迎新进群的小可爱[爱心]~~~ ~~~'
 
 ## API接口服务配置
 Api_Server:
