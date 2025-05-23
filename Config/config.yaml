@@ -31,7 +31,11 @@ Push_Config:
 ## 进群关键词配置
 Room_Key_Word:
   进测试群:
+<<<<<<< HEAD
     - '39089489347@chatroom'
+=======
+    - '39154998791@chatroom'
+>>>>>>> 31d4836424f95286fc6feacb5d83fe1744a4d060
   音乐剧:
     - '39089489347@chatroom'
     - ''
